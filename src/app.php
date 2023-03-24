@@ -4,8 +4,6 @@ namespace RezKit\Provider\Tutorial;
 use Exception;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Server\MiddlewareInterface;
-use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Factory\AppFactory;
 
 require_once(__DIR__ . '/../vendor/autoload.php');
@@ -82,7 +80,6 @@ $app->get('/products', static function (Request $req, Response $res) use ($produ
     $res->getBody()->write(json_encode($products->all(), JSON_PRETTY_PRINT));
     return $res;
 });
-
 
 /**
  * Create a new booking

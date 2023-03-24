@@ -19,11 +19,13 @@ class ServiceDescription
 
             'operations' => [
                 'get_product' => [
+                    // `:id` in the URL will be replaced by the ID of the product.
                     'url' => '/products/:id'
                 ]
             ],
 
             'services' => [
+                // This service offers PACKAGE products with booking.
                 'packages' => [
                     'operations' => [
                         'package_search' =>  [

@@ -17,7 +17,28 @@ class Products
                     'type' => 'allocation',
                     'available' => 16,
                 ],
+
                 'pricing' => [
+                    // A list of prices in each available currency.
+                    [
+                        // Total price to be paid for the product
+                        'price' => [
+                            'value' => 120000,  // Prices are given in minor currency units, e.g. cents.
+                            'currency' => 'USD'
+                        ],
+
+                        // An optional deposit value to be paid immediately.
+                        // If omitted then no deposit is required.
+                        'deposit' => [
+                            'value' => 20000,
+                            'currency' => 'USD'
+                        ],
+
+                        // A date at which payment for the full price is due.
+                        // If this value is in the past then the full price is due immediately.
+                        // This field would normally be calculated.
+                        'balance_due' => '2023-12-31T00:00:00.000Z'
+                    ]
                 ]
             ]
         ];
